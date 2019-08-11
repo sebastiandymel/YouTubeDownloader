@@ -1,0 +1,37 @@
+﻿<UserControl
+    x:Class="YTDownloader.Wpf.UserSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="350"
+    Height="100"
+    Background="White"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel Margin="12">
+            <TextBlock FontSize="14" Text="Download directory:" />
+            <Grid Margin="0,12,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox
+                    Height="30"
+                    Padding="0,5,0,0"
+                    Text="{Binding DownloadDirectory, UpdateSourceTrigger=PropertyChanged}" />
+                <Button
+                    Grid.Column="1"
+                    Width="30"
+                    Height="30"
+                    Margin="8,0,0,0"
+                    VerticalAlignment="Center"
+                    Command="{Binding BrowseCommand}"
+                    Content="..." />
+
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
